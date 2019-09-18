@@ -1,9 +1,11 @@
 @charset "UTF-8";
 
+/* 原則文章は真ん中 */
 div, p {
 	text-align: center;
 }
 
+/* ジャンボトロン背景 */
 .jumbotronSetting {
 	position: relative;
 	height: 100vh;
@@ -11,8 +13,14 @@ div, p {
 	background: url(../img/jumbotron.jpg) no-repeat center center;
 	background-size: cover;
 }
+/* ジャンボトロン文字 */
 .jumbotronContent {
 	position: relative;
 	top: 25%;
 	right: 32%;
+}
+
+/* 改行位置調整 */
+span{
+	display: inline-block;
 }

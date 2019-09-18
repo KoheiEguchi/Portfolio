@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	
-	<link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}">
-	<link rel="stylesheet" type="text/css" th:href="@{css/common.css}">
-	<script type="text/javascript" th:src="@{webjars/jquery/1.12.4/jquery.min.js}"></script>
-	<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>	
-</head>
+<head th:replace="replace::head"></head>
 <body>
-	<div class="jumbotron-fluid jumbotronSetting"><div class="h1 text-light jumbotronContent">ポートフォリオ</div></div>
+	<div th:replace="replace::jumbotron"></div>
 	<div class="container">
 		<div class="row my-4">
 			<div class="col-12">
-				<div class="h2">自己紹介</div>
-				<div>紹介文書く</div>
+				<h2 class="py-2 bg-secondary">自己紹介</h2>
+				<div th:replace="replace::profile"></div>
+			</div>
+			<div class="col-12">
+				<h2 class="py-2 bg-secondary">アピールポイント</h2>
+			</div>
+			<div class="col-md-4 col-xs-12 bg-info py-2">
+				<div th:replace="replace::appeal1"></div>
+			</div>
+			<div class="col-md-4 col-xs-12 bg-success py-2">
+				<div th:replace="replace::appeal2"></div>
+			</div>
+			<div class="col-md-4 col-xs-12 bg-warning py-2">
+				<div th:replace="replace::appeal3"></div>
+			</div>
+			<h2 class="col-12 py-2 bg-secondary">成果物</h2>
+			<div class="col-md-6 col-xs-12">
+				<img src="img/jumbotron.jpg" width="50" height="50">
+			</div>
+			<div class="col-md-6 col-xs-12">
+				<div class="h4">成果物題</div>
 				<br>
-				<div class="h2 my-4">成果物</div>
+				<div>説明</div>
 			</div>
-			<div class="col-md-4 col-xs-12">
-				<div class="h4">成果物1</div>
-				<div>成果物説明</div>
+			<div class="col-md-6 col-xs-12">
+				<img src="img/jumbotron.jpg" width="50" height="50">
 			</div>
-			<div class="col-md-4 col-xs-12">
-				<div class="h4">成果物2</div>
-				<div>成果物説明</div>
-			</div>
-			<div class="col-md-4 col-xs-12">
-				<div class="h4">成果物3</div>
-				<div>成果物説明</div>
+			<div class="col-md-6 col-xs-12">
+				<div class="h4">成果物題</div>
+				<br>
+				<div>説明</div>
 			</div>
 			<div class="col-12">
 				<div class="row">
 					<div class="col-md-2 col-xs-1"></div>
 					<div class="col-md-8 col-xs-10">
 						<form th:action="@{/form}" method="post">
-							<div class="h2 mt-5">連絡</div>
+							<div id="form" class="h2 mt-5">連絡</div>
 							<div th:if="${nameCheck == true}">名前を入力してください。</div>
 							<div class="text-left">名前</div>
 							<div class="text-right"><input type="text" name="name" placeholder="名前"></div>

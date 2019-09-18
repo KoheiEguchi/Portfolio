@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- /* head */ -->
+<head th:fragment="head">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	<link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{css/common.css}">
+	<script type="text/javascript" th:src="@{webjars/jquery/1.12.4/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+	<!-- /* ジャンボトロン */ -->
+	<div th:fragment="jumbotron">
+		<div class="jumbotron-fluid jumbotronSetting">
+			<div class="jumbotronContent">
+				<div class="h1 text-light">ポートフォリオ</div>
+				<p><a href="#form"><input class="btn btn-success shadow my-1" type="button" value="連絡"></a></p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- /* 自己紹介 */ -->
+	<div th:fragment="profile">
+		<div class="px-2 py-2 bg-danger">
+			<div class="text-left">
+				<span>自分はプログラミング教室、</span><span>または独学で</span><span>Javaを中心に</span><span>Web系技術を</span><span>身につけました。</span>
+				<span>開発には</span><span>主にEclipseを使っており、</span><span>OSは</span><span>WindowsとMacが</span><span>使用可能です。</span>
+			</div>
+			<div class="text-left">
+				<span>エンジニアとして</span><span>企業等へ実際に勤めたことは</span><span>ありませんが、</span><span>学習は</span><span>一年近く続けており、</span>
+				<span>今後も</span><span>様々なものに</span><span>学習意欲が</span><span>湧いております。</span>
+			</div>
+		</div>
+	</div>
+	
+	<!-- /* アピールポイント1 */ -->
+	<div th:fragment="appeal1">
+		<div class="h4">Javaを用いたWeb開発</div>
+		<div class="text-left">
+			<span>JavaとHTML/CSSを</span><span>プログラミング教室で学んでおり、</span><span>また独学ながら</span>
+			<span>JavaScript,</span><span>Bootstrap,</span><span>SpringBootを</span><span>習得しております。</span>
+		</div>
+		<div class="text-left">
+			<span>主にWeb開発を中心に</span><span>学習しており、</span><span>簡単なWebアプリであれば</span><span>独力で開発が</span><span>可能です。</span>
+		</div>
+	</div>
+	<!-- /* アピールポイント2 */ -->
+	<div th:fragment="appeal2">
+		<div class="h4">未経験ながら意欲はあり</div>
+		<div class="text-left">
+			<span>エンジニアとしての実務経験、</span><span>社会人経験共にありませんが、</span><span>新技術、必用技術への</span><span>学習意欲はあります。</span>
+		</div>
+		<div class="text-left">
+			<span>Web開発は</span><span>Javaで行なっていましたが</span><span>より一般的に用いられる</span><span>PHPの習得や、</span>
+			<span>Javaの代替技術となりうる</span><span>Kotlinを習得したいと</span><span>考えております。</span>
+		</div>
+	</div>
+	<!-- /* アピールポイント3 */ -->
+	<div th:fragment="appeal3">
+		<div class="h4">システム開発もOK</div>
+		<div class="text-left">
+			<span>JavaでのWeb開発の過程で、</span><span>フロントエンドだけでなく</span><span>サーバーサイドも扱った経験があります。</span>
+			<span>コードを書いていて</span><span>より楽しく感じたのも</span><span>こちら側でした。</span>
+		</div>
+		<div class="text-left">
+			<span>この経験から、</span><span>Web重視といえども</span><span>システム開発にも</span><span>比較的早く対応できると</span><span>考えております。</span>
+		</div>
+	</div>
+</body>
+</html>
