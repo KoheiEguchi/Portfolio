@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+/* 背景色 */
+body {
+	background: linear-gradient(#ffcc99, #ffd6ea);
+}
+
 /* 原則文章は真ん中 */
 div, p {
 	text-align: center;

@@ -6,44 +6,58 @@
 	<div class="container">
 		<div class="row my-4">
 			<div class="col-12">
-				<h2 class="py-2 bg-secondary">自己紹介</h2>
+				<h2 class="py-2">自己紹介</h2>
 				<div th:replace="replace::profile"></div>
 			</div>
 			<div class="col-12">
-				<h2 class="py-2 bg-secondary">アピールポイント</h2>
+				<h2 class="mt-5 pb-2">アピールポイント</h2>
 			</div>
-			<div class="col-md-4 col-xs-12 bg-info py-2">
+			<div class="col-md-4 col-xs-12 py-2">
 				<div th:replace="replace::appeal1"></div>
 			</div>
-			<div class="col-md-4 col-xs-12 bg-success py-2">
+			<div class="col-md-4 col-xs-12 py-2">
 				<div th:replace="replace::appeal2"></div>
 			</div>
-			<div class="col-md-4 col-xs-12 bg-warning py-2">
+			<div class="col-md-4 col-xs-12 py-2">
 				<div th:replace="replace::appeal3"></div>
 			</div>
-			<h2 class="col-12 py-2 bg-secondary">成果物</h2>
-			<div class="col-md-6 col-xs-12">
-				<img src="img/jumbotron.jpg" width="50" height="50">
+			<h2 class="col-12 mt-5 pb-2">成果物</h2>
+			<div class="col-md-6 col-xs-12 my-3">
+				<img src="img/officeSystemIndex.jpg" width="100%" height="300">
+				<img src="img/officeSystemWorkTimeCheck.jpg" width="100%" height="300">
 			</div>
-			<div class="col-md-6 col-xs-12">
-				<div class="h4">成果物題</div>
-				<br>
-				<div>説明</div>
+			<div class="col-md-6 col-xs-12 my-3">
+				<div class="h4 mb-4">業務システム</div>
+				<div class="text-left">
+					<span>会社内で使うシステムを</span><span>意識して作ったものです。</span><span>社員の出退勤管理、</span><span>連絡事項、</span>
+					<span>商品の在庫管理、</span><span>社員の情報管理が</span><span>可能です。</span>
+				</div>
+				<div class="text-left">
+					<span>Javaは</span><span>システム開発で用いられることが</span><span>多いため、</span><span>その分野の習作として</span><span>作りました。</span>
+				</div>
+				<div class="h4 my-1"><a href="https://github.com/KoheiEguchi/OfficeSystem.git" target="_blank">GitHubはこちら</a></div>
 			</div>
-			<div class="col-md-6 col-xs-12">
-				<img src="img/jumbotron.jpg" width="50" height="50">
+			<div class="col-md-6 col-xs-12 my-3">
+				<img src="img/utanokaiTop.jpg" width="100%" height="300">
+				<img src="img/utanokaiCompose.jpg" width="100%" height="300">
 			</div>
-			<div class="col-md-6 col-xs-12">
-				<div class="h4">成果物題</div>
-				<br>
-				<div>説明</div>
+			<div class="col-md-6 col-xs-12 my-3">
+				<div class="h4 mb-4">歌の会</div>
+				<div class="text-left">
+					<span>俳句・川柳、</span><span>短歌、</span><span>旋頭歌、</span><span>都々逸を</span><span>詠んで投稿できる</span><span>サービスです。</span>
+					<span>全体的な雰囲気を</span><span>和風にし、</span><span>歌の表示も</span><span>縦書きにしてあります。</span>
+				</div>
+				<div class="text-left">
+					<span>SpringBootを使わず</span><span>サーブレットとJSPで</span><span>作りました。</span>
+				</div>
+				<div class="h4 my-1"><a href="https://github.com/KoheiEguchi/UtanoKai_copy.git" target="_blank">GitHubはこちら</a></div>
 			</div>
 			<div class="col-12">
 				<div class="row">
 					<div class="col-md-2 col-xs-1"></div>
 					<div class="col-md-8 col-xs-10">
 						<form th:action="@{/form}" method="post">
-							<div id="form" class="h2 mt-5">連絡</div>
+							<div id="form" class="h2 mt-5 pb-2">連絡</div>
 							<div th:if="${nameCheck == true}">名前を入力してください。</div>
 							<div class="text-left">名前</div>
 							<div class="text-right"><input type="text" name="name" placeholder="名前"></div>
