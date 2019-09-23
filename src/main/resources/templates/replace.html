@@ -9,6 +9,9 @@
 	<link rel="stylesheet" type="text/css" th:href="@{css/common.css}">
 	<script type="text/javascript" th:src="@{webjars/jquery/1.12.4/jquery.min.js}"></script>
 	<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{js/common.js}"></script>
+	
+	<title>ポートフォリオ</title>
 </head>
 <body>
 	<!-- /* ジャンボトロン */ -->
@@ -67,6 +70,77 @@
 		<div class="text-left">
 			<span>この経験から、</span><span>Web重視といえども</span><span>システム開発にも</span><span>比較的早く対応できると</span><span>考えております。</span>
 		</div>
+	</div>
+	
+	<!-- /* 成果物1 */ -->
+	<div th:fragment="work1">
+		<div class="row">
+			<div class="col-md-6 col-xs-12 my-3">
+				<img id="officeSystemImg" onclick="slideshow(id)" src="img/officeSystemIndex.jpg" width="100%" height="300">
+			</div>
+			<div class="col-md-6 col-xs-12 mt-5 mb-3">
+				<div class="h4 mb-4">業務システム</div>
+				<div class="text-left">
+					<span>会社内で使うシステムを</span><span>意識して作ったものです。</span><span>社員の出退勤管理、</span><span>連絡事項、</span>
+					<span>商品の在庫管理、</span><span>社員の情報管理が</span><span>可能です。</span>
+				</div>
+				<div class="text-left">
+					<span>Javaは</span><span>システム開発で用いられることが</span><span>多いため、</span><span>その分野の習作として</span><span>作りました。</span>
+				</div>
+				<div class="h4 my-1"><a href="https://github.com/KoheiEguchi/OfficeSystem.git" target="_blank">GitHubはこちら</a></div>
+			</div>
+		</div>
+	</div>
+	<!-- /* 成果物2 */ -->
+	<div th:fragment="work2">
+		<div class="row">
+			<div class="col-md-6 col-xs-12 my-3">
+				<img id="muMeisyoImg" onclick="slideshow(id)" src="img/muMeisyoBrowse.jpg" width="100%" height="300">
+			</div>
+			<div class="col-md-6 col-xs-12 mt-5 mb-3">
+				<div class="h4 mb-4">無名な名所</div>
+				<div class="text-left">
+					<span>広く知られてはいない</span><span>身近な名所、</span><span>お気に入りの場所を</span><span>投稿し共有できる</span><span>サービスです。</span>
+					<span>気に入った投稿に</span><span>高評価をつけたり</span><span>コメントを書いたり</span><span>できます。</span>
+				</div>
+				<div class="text-left">
+					<span>SpringBootを</span><span>初めて使い</span><span>作ったものです。</span>
+				</div>
+				<div class="h4 my-1"><a href="https://github.com/KoheiEguchi/MuMeisyo.git" target="_blank">GitHubはこちら</a></div>
+			</div>
+		</div>
+	</div>
+	<!-- /* 成果物3 */ -->
+	<div th:fragment="work3">
+		<div class="row">
+			<div class="col-md-6 col-xs-12 my-3">
+				<img id="utanokaiImg" onclick="slideshow(id)" src="img/utanokaiTop.jpg" width="100%" height="300">
+			</div>
+			<div class="col-md-6 col-xs-12 mt-5 mb-3">
+				<div class="h4 mb-4">歌の会</div>
+				<div class="text-left">
+					<span>俳句・川柳、</span><span>短歌、</span><span>旋頭歌、</span><span>都々逸を</span><span>詠んで投稿できる</span><span>サービスです。</span>
+					<span>全体的な雰囲気を</span><span>和風にし、</span><span>歌の表示も</span><span>縦書きにしてあります。</span>
+				</div>
+				<div class="text-left">
+					<span>SpringBootを使わず</span><span>サーブレットとJSPで</span><span>作りました。</span>
+				</div>
+				<div class="h4 my-1"><a href="https://github.com/KoheiEguchi/UtanoKai_copy.git" target="_blank">GitHubはこちら</a></div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- /* 連絡 */ -->
+	<div th:fragment="form">
+		<div th:if="${nameCheck == true}">名前を入力してください。</div>
+		<div class="text-left">名前</div>
+		<div class="text-right"><input type="text" name="name" placeholder="名前"></div>
+		<div th:if="${addressCheck == true}">連絡先を入力してください。</div>
+		<div class="text-left">連絡先</div>
+		<div class="text-right"><input class="w-50" type="text" name="address" placeholder="example@example.com"></div>
+		<div th:if="${contentCheck == true}">内容を入力してください。</div>
+		<div class="text-left">内容</div>
+		<div class="text-right"><textarea name="content" cols="90" rows="10" placeholder="内容"></textarea></div>
 	</div>
 </body>
 </html>

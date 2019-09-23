@@ -25,6 +25,11 @@ div, p {
 	right: 32%;
 }
 
+/* 画像上でカーソル変える */
+img {
+	cursor: pointer;
+}
+
 /* 改行位置調整 */
 span{
 	display: inline-block;
