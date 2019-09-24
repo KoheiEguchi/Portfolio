@@ -2,15 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="replace::head"></head>
 <body>
+	<div th:replace="replace::header"></div>
 	<div th:replace="replace::jumbotron"></div>
 	<div class="container">
 		<div class="row my-4">
 			<div class="col-12">
+				<div id="profile" class="linkSpace"></div>
 				<h2 class="py-2">自己紹介</h2>
 				<div th:replace="replace::profile"></div>
 			</div>
 			<div class="col-12">
-				<h2 class="mt-5 pb-2">アピールポイント</h2>
+				<div id="appeal" class="mt-5 linkSpace"></div>
+				<h2 class="py-2">アピールポイント</h2>
 			</div>
 			<div class="col-md-4 col-xs-12 py-2">
 				<div th:replace="replace::appeal1"></div>
@@ -21,7 +24,8 @@
 			<div class="col-md-4 col-xs-12 py-2">
 				<div th:replace="replace::appeal3"></div>
 			</div>
-			<h2 class="col-12 mt-5 pb-2">成果物</h2>
+			<div id="work" class="col-12 mt-5 linkSpace"></div>
+			<h2 class="col-12 py-2">成果物</h2>
 			<div th:replace="replace::work1"></div>
 			<div th:replace="replace::work2"></div>
 			<div th:replace="replace::work3"></div>
@@ -30,7 +34,8 @@
 					<div class="col-md-2 col-xs-1"></div>
 					<div class="col-md-8 col-xs-10">
 						<form th:action="@{/form}" method="post">
-							<div id="form" class="h2 mt-5 pb-2">連絡</div>
+							<div id="form" class="mt-5 linkSpace"></div>
+							<div class="h2 py-2">連絡</div>
 							<div th:replace="replace::form"></div>
 							<div><input class="btn btn-primary shadow my-4" type="submit" value="送信"></div>
 						</form>

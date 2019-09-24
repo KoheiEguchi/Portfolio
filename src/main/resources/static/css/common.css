@@ -2,7 +2,10 @@
 
 /* 背景色 */
 body {
-	background: linear-gradient(#ffcc99, #ffd6ea);
+	width: 100%;
+    height: 100%;
+	background-color: #faf0e6;
+	padding-top: 50px;
 }
 
 /* 原則文章は真ん中 */
@@ -23,6 +26,11 @@ div, p {
 	position: relative;
 	top: 25%;
 	right: 32%;
+}
+
+/* リンク時ヘッダーから題を出す空間 */
+.linkSpace {
+	height: 50px;
 }
 
 /* 画像上でカーソル変える */
