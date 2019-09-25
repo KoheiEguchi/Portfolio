@@ -150,15 +150,29 @@
 	
 	<!-- /* 連絡 */ -->
 	<div th:fragment="form">
-		<div th:if="${nameCheck == true}">名前を入力してください。</div>
+		<div th:if="${nameCheck == true}"><div th:replace="replace::entryErr('名前を入力してください。')"></div></div>
 		<div class="text-left">名前</div>
 		<div class="text-right"><input type="text" name="name" placeholder="名前"></div>
-		<div th:if="${addressCheck == true}">連絡先を入力してください。</div>
+		<div th:if="${addressCheck == true}"><div th:replace="replace::entryErr('連絡先を入力してください。')"></div></div>
 		<div class="text-left">連絡先</div>
 		<div class="text-right"><input class="w-50" type="text" name="address" placeholder="example@example.com"></div>
-		<div th:if="${contentCheck == true}">内容を入力してください。</div>
+		<div th:if="${contentCheck == true}"><div th:replace="replace::entryErr('内容を入力してください。')"></div></div>
 		<div class="text-left">内容</div>
 		<div class="text-right"><textarea name="content" cols="90" rows="10" placeholder="内容"></textarea></div>
+	</div>
+	<!--/* 入力エラー */-->
+	<div th:fragment="entryErr(err)">
+		<div class="alert alert-danger w-100 rounded-0">
+			<div th:text="${err}"></div>
+		</div>
+	</div>
+	
+	<!--/* メッセージ */-->
+	<div th:fragment="msg(msg)">
+		<div class="alert alert-danger alert-dismissible w-100 text-center rounded-0 fade show">
+			<div th:text="${msg}"></div>
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+		</div>
 	</div>
 </body>
 </html>

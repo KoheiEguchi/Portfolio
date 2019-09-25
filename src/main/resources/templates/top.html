@@ -36,6 +36,7 @@
 						<form th:action="@{/form}" method="post">
 							<div id="form" class="mt-5 linkSpace"></div>
 							<div class="h2 py-2">連絡</div>
+							<div th:if="${send == true}"><div th:replace="replace::msg('送信しました。')"></div></div>
 							<div th:replace="replace::form"></div>
 							<div><input class="btn btn-primary shadow my-4" type="submit" value="送信"></div>
 						</form>
@@ -45,5 +46,8 @@
 			</div>
 		</div>
 	</div>
+	<script th:inline="javascript">
+		window.onload = formOpen([[${formOpen}]]);
+	</script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head th:replace="replace::head"></head>
 <body>
 	<div th:if="${isAdmin != true}">
-		<div th:if="${msg == true}">ログインできません。</div>
+		<div th:if="${noAdmin == true}"><div th:replace="replace::msg('ログインできません。')"></div></div>
 		<div class="h1 mt-5">管理人チェック</div>
 		<div class="row">
 			<div class="col-md-2 col-xs-1"></div>
@@ -23,6 +23,7 @@
 	</div>
 	<div th:if="${isAdmin == true}">
 		<div class="h1 mt-5 mb-4">連絡一覧</div>
+		<div th:if="${delete == true}"><div th:replace="replace::msg('連絡を削除しました。')"></div></div>
 		<div th:inline="text" th:each="form: ${formList}" th:object="${form}">
 			<div class="row">
 				<div class="col-1"></div>
@@ -45,6 +46,12 @@
 									<br th:if="${!contentArea.last}">
 								</th:block>
 							</th:block></p>
+						</div>
+						<div class="col-12 py-1">
+							<form th:action="@{/formDelete}" method="post" onsubmit="return deleteCheck()">
+								<input type="hidden" name="formId" th:value="*{id}">
+								<input class="btn btn-danger shadow" type="submit" value="この連絡を削除する">
+							</form>
 						</div>
 					</div>
 					<br>
