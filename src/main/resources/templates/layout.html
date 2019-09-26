@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- /* head */ -->
+<head th:fragment="head">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">  <!-- /* lightbox2 */ -->
+	<link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}">  <!-- /* bootstrap */ -->
+	<link rel="stylesheet" type="text/css" th:href="@{css/common.css}">  <!-- /* 自作 */ -->
+	
+	<title>ポートフォリオ</title>
+</head>
+<body>
+	<!--/* ヘッダー */-->
+	<header th:fragment="header">
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-light">
+			<a class="navbar-brand text-dark" th:href="@{/top}">ポートフォリオ</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarList">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarList">
+				<ul class="navbar-nav">
+					<li class="nav-item px-3"><a class="nav-link text-dark" href="#profile">自己紹介</a></li>
+					<li class="nav-item px-3"><a class="nav-link text-dark" href="#appeal">アピールポイント</a></li>
+					<li class="nav-item px-3"><a class="nav-link text-dark" href="#work">成果物</a></li>
+					<li class="nav-item px-3"><a class="nav-link text-dark" href="#form">連絡</a></li>
+					<li class="nav-item px-3"><a class="nav-link text-dark" th:href="@{/admin}">管理用</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<!-- /* ジャンボトロン */ -->
+	<div th:fragment="jumbotron">
+		<div class="jumbotron-fluid jumbotronSetting">
+			<div class="jumbotronContent">
+				<div class="h1 text-light">ポートフォリオ</div>
+			</div>
+		</div>
+	</div>
+<!--/* メッセージ */-->
+	<div th:fragment="msg(msg)">
+		<div class="alert alert-danger alert-dismissible w-100 text-center rounded-0 fade show">
+			<div th:text="${msg}"></div>
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+		</div>
+	</div>
+	
+	<!--/* JavaScript */-->
+	<div th:fragment="script">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>  <!-- /* lightbox2 */ -->
+		<script type="text/javascript" th:src="@{webjars/jquery/1.12.4/jquery.min.js}"></script>  <!-- /* bootstrap */ -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>  <!-- /* lightbox2 */ -->
+		<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>  <!-- /* bootstrap */ -->
+		<script type="text/javascript" th:src="@{js/common.js}"></script>  <!-- /* 自作 */ -->
+	</div>
+</body>
+</html>

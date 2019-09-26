@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="replace::head"></head>
+<head th:replace="layout::head"></head>
 <body>
 	<div th:if="${isAdmin != true}">
-		<div th:if="${noAdmin == true}"><div th:replace="replace::msg('ログインできません。')"></div></div>
+		<div th:if="${noAdmin == true}"><div th:replace="layout::msg('ログインできません。')"></div></div>
 		<div class="h1 mt-5">管理人チェック</div>
 		<div class="row">
 			<div class="col-md-2 col-xs-1"></div>
@@ -23,7 +23,7 @@
 	</div>
 	<div th:if="${isAdmin == true}">
 		<div class="h1 mt-5 mb-4">連絡一覧</div>
-		<div th:if="${delete == true}"><div th:replace="replace::msg('連絡を削除しました。')"></div></div>
+		<div th:if="${delete == true}"><div th:replace="layout::msg('連絡を削除しました。')"></div></div>
 		<div th:inline="text" th:each="form: ${formList}" th:object="${form}">
 			<div class="row">
 				<div class="col-1"></div>
@@ -61,5 +61,6 @@
 		</div>
 	</div>
 	<div class="my-5"><a th:href="@{/top}"><input class="btn btn-secondary shadow" type="button" value="戻る"></a></div>
+	<div th:replace="layout::script"></div>
 </body>
 </html>

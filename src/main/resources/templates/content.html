@@ -1,53 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<!-- /* head */ -->
-<head th:fragment="head">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	
-	<link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}">
-	<link rel="stylesheet" type="text/css" th:href="@{css/common.css}">
-	<script type="text/javascript" th:src="@{webjars/jquery/1.12.4/jquery.min.js}"></script>
-	<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
-	<script type="text/javascript" th:src="@{js/common.js}"></script>
-	
-	<title>ポートフォリオ</title>
-</head>
+<head th:replace="layout::head"></head>
 <body>
-	<!--/* ヘッダー */-->
-	<header th:fragment="header">
-		<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-light">
-			<a class="navbar-brand text-dark" th:href="@{/top}">ポートフォリオ</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarList">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarList">
-				<ul class="navbar-nav">
-					<li class="nav-item px-3"><a class="nav-link text-dark" href="#profile">自己紹介</a></li>
-					<li class="nav-item px-3"><a class="nav-link text-dark" href="#appeal">アピールポイント</a></li>
-					<li class="nav-item px-3"><a class="nav-link text-dark" href="#work">成果物</a></li>
-					<li class="nav-item px-3"><a class="nav-link text-dark" href="#form">連絡</a></li>
-					<li class="nav-item px-3"><a class="nav-link text-dark" th:href="@{/admin}">管理用</a></li>
-				</ul>
-			</div>
-		</nav>
-	</header>
-
-	<!-- /* ジャンボトロン */ -->
-	<div th:fragment="jumbotron">
-		<div class="jumbotron-fluid jumbotronSetting">
-			<div class="jumbotronContent">
-				<div class="h1 text-light">ポートフォリオ</div>
-			</div>
-		</div>
-	</div>
-	
 	<!-- /* 自己紹介 */ -->
 	<div th:fragment="profile">
 		<div class="px-2 py-2">
 			<div class="text-left">
 				<span>自分はプログラミング教室、</span><span>または独学で</span><span>Javaを中心に</span><span>Web系技術を</span><span>身につけました。</span>
 				<span>開発には</span><span>主にEclipseを使っており、</span><span>OSは</span><span>WindowsとMacが</span><span>使用可能です。</span>
+				<span>DBは</span><span>mySQLを</span><span>使っております。</span>
 			</div>
 			<div class="text-left">
 				<span>エンジニアとして</span><span>企業等へ実際に勤めたことは</span><span>ありませんが、</span><span>学習は</span><span>一年近く続けており、</span>
@@ -58,43 +19,67 @@
 	
 	<!-- /* アピールポイント1 */ -->
 	<div th:fragment="appeal1">
-		<div class="h4">Javaを用いたWeb開発</div>
-		<div class="text-left">
+		<img src="img/layout/website.jpg" width="100vw" height="100vh">
+		<div class="h4 mt-4 mb-2">Javaを用いたWeb開発</div>
+		<div>
 			<span>JavaとHTML/CSSを</span><span>プログラミング教室で学んでおり、</span><span>また独学ながら</span>
 			<span>JavaScript,</span><span>Bootstrap,</span><span>SpringBootを</span><span>習得しております。</span>
 		</div>
-		<div class="text-left">
+		<div>
 			<span>主にWeb開発を中心に</span><span>学習しており、</span><span>簡単なWebアプリであれば</span><span>独力で開発が</span><span>可能です。</span>
 		</div>
 	</div>
 	<!-- /* アピールポイント2 */ -->
 	<div th:fragment="appeal2">
-		<div class="h4">未経験ながら意欲はあり</div>
-		<div class="text-left">
+		<img src="img/layout/study.jpg" width="100vw" height="100vh">
+		<div class="h4 mt-4 mb-2">未経験ながら意欲はあり</div>
+		<div>
 			<span>エンジニアとしての実務経験、</span><span>社会人経験共にありませんが、</span><span>新技術、必用技術への</span><span>学習意欲はあります。</span>
 		</div>
-		<div class="text-left">
+		<div>
 			<span>Web開発は</span><span>Javaで行なっていましたが</span><span>より一般的に用いられる</span><span>PHPの習得や、</span>
 			<span>Javaの代替技術となりうる</span><span>Kotlinを習得したいと</span><span>考えております。</span>
 		</div>
 	</div>
 	<!-- /* アピールポイント3 */ -->
 	<div th:fragment="appeal3">
-		<div class="h4">システム開発もOK</div>
-		<div class="text-left">
+		<img src="img/layout/system.jpg" width="100vw" height="100vh">
+		<div class="h4 mt-4 mb-2">システム開発もOK</div>
+		<div>
 			<span>JavaでのWeb開発の過程で、</span><span>フロントエンドだけでなく</span><span>サーバーサイドも扱った経験があります。</span>
 			<span>コードを書いていて</span><span>より楽しく感じたのも</span><span>こちら側でした。</span>
 		</div>
-		<div class="text-left">
+		<div>
 			<span>この経験から、</span><span>Web重視といえども</span><span>システム開発にも</span><span>比較的早く対応できると</span><span>考えております。</span>
 		</div>
 	</div>
 	
-	<!-- /* 成果物1 */ -->
-	<div th:fragment="work1">
+	<!-- /* 成果物3 */ -->
+	<div th:fragment="work3">
 		<div class="row">
 			<div class="col-md-6 col-xs-12 my-3">
-				<img id="officeSystemImg" onclick="slideshow(id)" src="img/officeSystemIndex.jpg" width="100%" height="300">
+				<div class="row">
+					<div class="col-6 mb-1">
+						<a href="img/officeSystem/index.jpg" data-lightbox="officeSystem" data-title="業務システム目次">
+							<img src="img/officeSystem/index.jpg" width="100%" height="150">
+						</a>
+					</div>
+					<div class="col-6 mb-1">
+						<a href="img/officeSystem/workTimeCheck.jpg" data-lightbox="officeSystem" data-title="業務システム出退勤管理">
+							<img src="img/officeSystem/workTimeCheck.jpg" width="100%" height="150">
+						</a>
+					</div>
+					<div class="col-6 mt-1">
+						<a href="img/officeSystem/messageList.jpg" data-lightbox="officeSystem" data-title="業務システム連絡事項">
+							<img src="img/officeSystem/messageList.jpg" width="100%" height="150">
+						</a>
+					</div>
+					<div class="col-6 mt-1">
+						<a href="img/officeSystem/productDetail.jpg" data-lightbox="officeSystem" data-title="業務システム商品詳細">
+							<img src="img/officeSystem/productDetail.jpg" width="100%" height="150">
+						</a>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-6 col-xs-12 mt-5 mb-3">
 				<div class="h4 mb-4">業務システム</div>
@@ -113,7 +98,28 @@
 	<div th:fragment="work2">
 		<div class="row">
 			<div class="col-md-6 col-xs-12 my-3">
-				<img id="muMeisyoImg" onclick="slideshow(id)" src="img/muMeisyoBrowse.jpg" width="100%" height="300">
+				<div class="row">
+					<div class="col-6 mb-1">
+						<a href="img/muMeisyo/top.jpg" data-lightbox="muMeisyo" data-title="無名な名所トップページ">
+							<img src="img/muMeisyo/top.jpg" width="100%" height="150">
+						</a>
+					</div>
+					<div class="col-6 mb-1">
+						<a href="img/muMeisyo/post.jpg" data-lightbox="muMeisyo" data-title="無名な名所投稿ページ">
+							<img src="img/muMeisyo/post.jpg" width="100%" height="150">
+						</a>
+					</div>
+					<div class="col-6 mt-1">
+						<a href="img/muMeisyo/browse.jpg" data-lightbox="muMeisyo" data-title="無名な名所投稿一覧">
+							<img src="img/muMeisyo/browse.jpg" width="100%" height="150">
+						</a>
+					</div>
+					<div class="col-6 mt-1">
+						<a href="img/muMeisyo/postDetail.jpg" data-lightbox="muMeisyo" data-title="無名な名所投稿詳細">
+							<img src="img/muMeisyo/postDetail.jpg" width="100%" height="150">
+						</a>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-6 col-xs-12 mt-5 mb-3">
 				<div class="h4 mb-4">無名な名所</div>
@@ -128,11 +134,32 @@
 			</div>
 		</div>
 	</div>
-	<!-- /* 成果物3 */ -->
-	<div th:fragment="work3">
+	<!-- /* 成果物1 */ -->
+	<div th:fragment="work1">
 		<div class="row">
 			<div class="col-md-6 col-xs-12 my-3">
-				<img id="utanokaiImg" onclick="slideshow(id)" src="img/utanokaiTop.jpg" width="100%" height="300">
+				<div class="row">
+					<div class="col-6 mb-1">
+						<a href="img/utanokai/top.jpg" data-lightbox="utanokai" data-title="歌の会トップページ">
+							<img src="img/utanokai/top.jpg" width="100%" height="150">
+						</a>
+					</div>
+					<div class="col-6 mb-1">
+						<a href="img/utanokai/compose.jpg" data-lightbox="utanokai" data-title="歌の会投稿ページ">
+							<img src="img/utanokai/compose.jpg" width="100%" height="150">
+						</a>
+					</div>
+					<div class="col-6 mt-1">
+						<a href="img/utanokai/haikuList.jpg" data-lightbox="utanokai" data-title="歌の会歌一覧">
+							<img src="img/utanokai/haikuList.jpg" width="100%" height="150">
+						</a>
+					</div>
+					<div class="col-6 mt-1">
+						<a href="img/utanokai/userDetail.jpg" data-lightbox="utanokai" data-title="歌の会ユーザー投稿履歴">
+							<img src="img/utanokai/userDetail.jpg" width="100%" height="150">
+						</a>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-6 col-xs-12 mt-5 mb-3">
 				<div class="h4 mb-4">歌の会</div>
@@ -150,15 +177,15 @@
 	
 	<!-- /* 連絡 */ -->
 	<div th:fragment="form">
-		<div th:if="${nameCheck == true}"><div th:replace="replace::entryErr('名前を入力してください。')"></div></div>
+		<div th:if="${nameCheck == true}"><div th:replace="content::entryErr('名前を入力してください。')"></div></div>
 		<div class="text-left">名前</div>
 		<div class="text-right"><input type="text" name="name" placeholder="名前"></div>
-		<div th:if="${addressCheck == true}"><div th:replace="replace::entryErr('連絡先を入力してください。')"></div></div>
+		<div th:if="${addressCheck == true}"><div th:replace="content::entryErr('連絡先を入力してください。')"></div></div>
 		<div class="text-left">連絡先</div>
 		<div class="text-right"><input class="w-50" type="text" name="address" placeholder="example@example.com"></div>
-		<div th:if="${contentCheck == true}"><div th:replace="replace::entryErr('内容を入力してください。')"></div></div>
+		<div th:if="${contentCheck == true}"><div th:replace="content::entryErr('内容を入力してください。')"></div></div>
 		<div class="text-left">内容</div>
-		<div class="text-right"><textarea name="content" cols="90" rows="10" placeholder="内容"></textarea></div>
+		<div class="text-right"><textarea name="content" cols="90" rows="10" placeholder="連絡等ございましたらこちらより送信をお願いします。"></textarea></div>
 	</div>
 	<!--/* 入力エラー */-->
 	<div th:fragment="entryErr(err)">
@@ -166,13 +193,6 @@
 			<div th:text="${err}"></div>
 		</div>
 	</div>
-	
-	<!--/* メッセージ */-->
-	<div th:fragment="msg(msg)">
-		<div class="alert alert-danger alert-dismissible w-100 text-center rounded-0 fade show">
-			<div th:text="${msg}"></div>
-			<button type="button" class="close" data-dismiss="alert">&times;</button>
-		</div>
-	</div>
+	<div th:replace="layout::script"></div>
 </body>
 </html>
