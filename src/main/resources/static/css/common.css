@@ -13,19 +13,41 @@ div, p {
 	text-align: center;
 }
 
-/* ジャンボトロン背景 */
-.jumbotronSetting {
-	position: relative;
-	height: 100vh;
-	min-height: 300px;
-	background: url(../img/layout/jumbotron.jpg) no-repeat center center;
-	background-size: cover;
+/* 大画面の場合 */
+@media screen and (min-width: 640px) {
+	/* ジャンボトロン背景 */
+	.jumbotronSetting {
+		position: relative;
+		height: 100vh;
+		min-height: 300px;
+		background: url(../img/layout/jumbotron.jpg) no-repeat center center;
+		background-size: cover;
+	}
+	/* ジャンボトロン内容 */
+	.jumbotronContent {
+		position: relative;
+		top: 25%;
+		right: 32%;
+	}
 }
-/* ジャンボトロン文字 */
-.jumbotronContent {
-	position: relative;
-	top: 25%;
-	right: 32%;
+/* 小画面の場合 */
+@media screen and (max-width: 640px) {
+	/* ジャンボトロン背景 */
+	.jumbotronSetting {
+		position: relative;
+		height: 25vh;
+		background: url(../img/layout/jumbotron.jpg) no-repeat center center;
+		background-size: cover;
+	}
+	/* ジャンボトロン内容 */
+	.jumbotronContent {
+		position: relative;
+		top: 40%;
+	}
+	/* ジャンボトロン文字 */
+	.jumbotronText {
+		text-shadow: 1px 1px 1px #999999;
+	}
 }
 
 /* リンク時ヘッダーから題を出す空間 */
@@ -33,7 +55,25 @@ div, p {
 	height: 50px;
 }
 
+/* 小画面で文章を中央揃えに変更 */
+@media screen and (max-width: 640px) {
+	.phone {
+		text-align: center !important;
+	}
+}
+
 /* 改行位置調整 */
 span{
 	display: inline-block;
+}
+
+/* 小画面で連絡先入力欄を大きくする */
+@media screen and (max-width: 640px) {
+	.phoneAddress {
+		width: 100% !important;
+	}
+}
+/* 連絡内容欄を画面より大きくしない */
+.contentArea {
+	max-width: 100%;
 }

@@ -5,12 +5,12 @@
 	<!-- /* 自己紹介 */ -->
 	<div th:fragment="profile">
 		<div class="px-2 py-2">
-			<div class="text-left">
+			<div class="text-left phone">
 				<span>自分はプログラミング教室、</span><span>または独学で</span><span>Javaを中心に</span><span>Web系技術を</span><span>身につけました。</span>
 				<span>開発には</span><span>主にEclipseを使っており、</span><span>OSは</span><span>WindowsとMacが</span><span>使用可能です。</span>
 				<span>DBは</span><span>mySQLを</span><span>使っております。</span>
 			</div>
-			<div class="text-left">
+			<div class="text-left phone">
 				<span>エンジニアとして</span><span>企業等へ実際に勤めたことは</span><span>ありませんが、</span><span>学習は</span><span>一年近く続けており、</span>
 				<span>今後も</span><span>様々なものに</span><span>学習意欲が</span><span>湧いております。</span>
 			</div>
@@ -83,11 +83,11 @@
 			</div>
 			<div class="col-md-6 col-xs-12 mt-5 mb-3">
 				<div class="h4 mb-4">業務システム</div>
-				<div class="text-left">
+				<div class="text-left phone">
 					<span>会社内で使うシステムを</span><span>意識して作ったものです。</span><span>社員の出退勤管理、</span><span>連絡事項、</span>
 					<span>商品の在庫管理、</span><span>社員の情報管理が</span><span>可能です。</span>
 				</div>
-				<div class="text-left">
+				<div class="text-left phone">
 					<span>Javaは</span><span>システム開発で用いられることが</span><span>多いため、</span><span>その分野の習作として</span><span>作りました。</span>
 				</div>
 				<div class="h4 my-1"><a href="https://github.com/KoheiEguchi/OfficeSystem.git" target="_blank">GitHubはこちら</a></div>
@@ -123,11 +123,11 @@
 			</div>
 			<div class="col-md-6 col-xs-12 mt-5 mb-3">
 				<div class="h4 mb-4">無名な名所</div>
-				<div class="text-left">
+				<div class="text-left phone">
 					<span>広く知られてはいない</span><span>身近な名所、</span><span>お気に入りの場所を</span><span>投稿し共有できる</span><span>サービスです。</span>
 					<span>気に入った投稿に</span><span>高評価をつけたり</span><span>コメントを書いたり</span><span>できます。</span>
 				</div>
-				<div class="text-left">
+				<div class="text-left phone">
 					<span>SpringBootを</span><span>初めて使い</span><span>作ったものです。</span>
 				</div>
 				<div class="h4 my-1"><a href="https://github.com/KoheiEguchi/MuMeisyo.git" target="_blank">GitHubはこちら</a></div>
@@ -163,11 +163,11 @@
 			</div>
 			<div class="col-md-6 col-xs-12 mt-5 mb-3">
 				<div class="h4 mb-4">歌の会</div>
-				<div class="text-left">
+				<div class="text-left phone">
 					<span>俳句・川柳、</span><span>短歌、</span><span>旋頭歌、</span><span>都々逸を</span><span>詠んで投稿できる</span><span>サービスです。</span>
 					<span>全体的な雰囲気を</span><span>和風にし、</span><span>歌の表示も</span><span>縦書きにしてあります。</span>
 				</div>
-				<div class="text-left">
+				<div class="text-left phone">
 					<span>SpringBootを使わず</span><span>サーブレットとJSPで</span><span>作りました。</span>
 				</div>
 				<div class="h4 my-1"><a href="https://github.com/KoheiEguchi/UtanoKai_copy.git" target="_blank">GitHubはこちら</a></div>
@@ -182,10 +182,12 @@
 		<div class="text-right"><input type="text" name="name" placeholder="名前"></div>
 		<div th:if="${addressCheck == true}"><div th:replace="content::entryErr('連絡先を入力してください。')"></div></div>
 		<div class="text-left">連絡先</div>
-		<div class="text-right"><input class="w-50" type="text" name="address" placeholder="example@example.com"></div>
+		<div class="text-right"><input class="w-50 phoneAddress" type="text" name="address" placeholder="example@example.com"></div>
 		<div th:if="${contentCheck == true}"><div th:replace="content::entryErr('内容を入力してください。')"></div></div>
 		<div class="text-left">内容</div>
-		<div class="text-right"><textarea name="content" cols="90" rows="10" placeholder="連絡等ございましたらこちらより送信をお願いします。"></textarea></div>
+		<div class="text-right">
+			<textarea class="contentArea" name="content" cols="90" rows="10" placeholder="連絡等ございましたらこちらより送信をお願いします。"></textarea>
+		</div>
 	</div>
 	<!--/* 入力エラー */-->
 	<div th:fragment="entryErr(err)">
